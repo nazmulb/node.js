@@ -23,13 +23,13 @@
 ![Node Processing Model](https://raw.githubusercontent.com/nazmulbasher/node/master/node-processing-model.png)
   
 ## What are features of node.js?
-**Asynchronous and Event Driven** - All APIs of Node.js library are asynchronous, that is, non-blocking.
-**Very Fast** − Being built on Google Chrome's V8 JavaScript Engine, Node.js library is very fast in code execution.
-**Single Threaded but Highly Scalable** − Node.js uses a single threaded model with event looping. Event mechanism helps the server to respond in a non-blocking way and makes the server highly scalable as opposed to traditional servers which create limited threads to handle requests.
-**No Buffering** − Node.js applications never buffer any data. These applications simply output the data in chunks.
+- **Asynchronous and Event Driven** - All APIs of Node.js library are asynchronous, that is, non-blocking.
+- **Very Fast** − Being built on Google Chrome's V8 JavaScript Engine, Node.js library is very fast in code execution.
+- **Single Threaded but Highly Scalable** − Node.js uses a single threaded model with event looping. Event mechanism helps the server to respond in a non-blocking way and makes the server highly scalable as opposed to traditional servers which create limited threads to handle requests.
+- **No Buffering** − Node.js applications never buffer any data. These applications simply output the data in chunks.
 	
 ## What are the Pros and Cons of node.js?
-**Pros:**
+- **Pros:**
 1. Asynchronous event driven IO helps concurrent request handling.
 2. Uses JavaScript, which is easy to learn.
 3. Share the same piece of code with both server and client side.
@@ -37,7 +37,7 @@
 5. Active and vibrant community, with lots of code shared via github, etc.
 6. You can stream big files.
   
-**Cons:**
+- **Cons:**
 1. The main drawback is the consistency factor. Many Node.js development companies feel that the API keeps changing at frequent intervals.
 2. Node.js doesn't work well with relational databases.
 3. Node.js is not suited for CPU-intensive tasks. It is suited for I/O stuff only (like web servers). 
@@ -60,9 +60,9 @@ Yes
 Yes, just because Node is designed without threads, doesn't mean you cannot take advantage of multiple cores in your environment. Child processes can be spawned by using our `child_process.fork()` API, and are designed to be easy to communicate with. Built upon that same interface is the `cluster` module, which allows you to share sockets between processes to enable load balancing over your cores.
 
 ## What are the three important components of node.js?
-**Import required modules** − We use the require directive to load Node.js modules.
-**Create server** − A server which will listen to client's requests similar to Apache HTTP Server.
-**Read request and return response** − The server created in an earlier step will read the HTTP request made by the client which can be a browser or a console and return the response.
+- **Import required modules** − We use the require directive to load Node.js modules.
+- **Create server** − A server which will listen to client's requests similar to Apache HTTP Server.
+- **Read request and return response** − The server created in an earlier step will read the HTTP request made by the client which can be a browser or a console and return the response.
 
 ## What is Callback?
 Callback is an asynchronous equivalent for a function. A callback function is called at the completion of a given task. Node makes heavy use of callbacks. All the APIs of Node are written in such a way that they support callbacks.
@@ -75,8 +75,9 @@ var data = fs.readFileSync('input.txt');
 
 console.log(data.toString());
 console.log("Program Ended");
-
-Non-Blocking Code Example:
+```
+## Non-Blocking Code Example:
+```
 var fs = require("fs");
 
 fs.readFile('input.txt', function (err, data) {
@@ -89,8 +90,10 @@ console.log("Program Ended");
 
 ## Creating node.js application:
 - **Step 1 - Import Required Module**
-  `var http = require("http");`
-  
+```
+var http = require("http");
+```  
+
 - **Step 2 - Create Server**
 ```
   http.createServer(function (request, response) {

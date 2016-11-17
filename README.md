@@ -29,7 +29,7 @@
 - **No Buffering** − Node.js applications never buffer any data. These applications simply output the data in chunks.
 	
 ## What are the Pros and Cons of node.js?
-- **Pros:**
+###### Pros:
 1. Asynchronous event driven IO helps concurrent request handling.
 2. Uses JavaScript, which is easy to learn.
 3. Share the same piece of code with both server and client side.
@@ -37,7 +37,7 @@
 5. Active and vibrant community, with lots of code shared via github, etc.
 6. You can stream big files.
   
-- **Cons:**
+###### Cons:
 1. The main drawback is the consistency factor. Many Node.js development companies feel that the API keeps changing at frequent intervals.
 2. Node.js doesn't work well with relational databases.
 3. Node.js is not suited for CPU-intensive tasks. It is suited for I/O stuff only (like web servers). 

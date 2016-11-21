@@ -1,0 +1,8 @@
+https://zellwk.com/blog/crud-express-mongodb/
+http://cwbuecheler.com/web/tutorials/2014/restful-web-app-node-express-mongodb/
+http://cwbuecheler.com/web/tutorials/2013/node-express-mongo/
+https://github.com/sequelize/express-example
+http://mongoosejs.com/index.html
+https://github.com/madhums/node-express-mongoose-demo
+https://github.com/passport/express-4.x-local-example
+http://mherman.org/blog/2015/01/31/local-authentication-with-passport-and-express-4/#.WCVR4Wp97IX

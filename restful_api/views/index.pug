@@ -1,0 +1,11 @@
+extends layout.pug
+
+block title
+	title= title
+
+block content
+	div(class='col-md-6' style={border: '1px solid #ccc'})
+		p: a(class='btn btn-link' href='/listUsers') List Users
+		p: a(class='btn btn-link' href='/showAddForm') Add User
+		if sessuser
+			p: a(class='btn btn-link' href='/logout') Logout

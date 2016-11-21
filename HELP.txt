@@ -1,0 +1,25 @@
+Mongodb Help Tips:
+
+To run mongo server:
+cd C:\Program Files\MongoDB\Server\3.2\bin
+mongod.exe --dbpath D:\mongodb\data
+
+To run mongo sell client: (open another cmd terminal to run it)
+cd C:\Program Files\MongoDB\Server\3.2\bin
+
+mongo.exe
+
+---------------------------------------
+npm tips:
+
+uninstall modules from package.json  
+
+npm prune
+
+
+
+
+
+
+
+

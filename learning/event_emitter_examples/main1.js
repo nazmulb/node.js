@@ -15,11 +15,13 @@ var connectHandler = function connected() {
 
 // Bind the connection event with the handler
 eventEmitter.on('connection', connectHandler);
- 
+
+var dr = function(){
+    console.log('data received succesfully.');
+}
+
 // Bind the data_received event with the anonymous function
-eventEmitter.on('data_received', function(){
-   console.log('data received succesfully.');
-});
+eventEmitter.on('data_received', dr);
 
 // Fire the connection event 
 eventEmitter.emit('connection');

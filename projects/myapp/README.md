@@ -2,10 +2,10 @@
 This is a project by using nodeJs, ExpressJs, Mongodb, MySql, pug, etc
 
 ## Setup
-You need node v6.9.1 or more latest version to be installed for this project.
+You need `node v6.9.1` or more latest version to be installed for this project.
 You need to install mongodb & mysql and run both database server as well. 
 
-Create myapp database with users collection/table and add SID data for _id, username, password, profession
+Create `myapp` database with `users` collection/table and add SID data for _id, username, password, profession
 
 ###### for mysql:
 

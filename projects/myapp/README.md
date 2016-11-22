@@ -7,10 +7,13 @@ You need to install mongodb & mysql and run both database server as well.
 
 Create myapp database with users collection/table and add SID data for _id, username, password, profession
 
-for mysql:
+###### for mysql:
 
+```
 CREATE DATABASE IF NOT EXISTS `myapp`
+```
 
+```
 CREATE TABLE IF NOT EXISTS `users` (
   `_id` bigint(20) NOT NULL,
   `username` varchar(255) NOT NULL,
@@ -20,14 +23,18 @@ CREATE TABLE IF NOT EXISTS `users` (
   UNIQUE KEY `username` (`username`),
   KEY `username_2` (`username`,`password`)
 ) ENGINE=InnoDB;
+```
 
+```
 INSERT INTO `users` (`_id`, `username`, `password`, `profession`) VALUES
 (1479131260, 'nazmul', '123', 'Software Engineer');
+```
 
 ## Starting App
 ```
 npm install
 npm start
 ```
-Open your browser and use the below url:
-http://127.0.0.1:8081
+
+###### Open your browser and use the below url:
+`http://127.0.0.1:8081`

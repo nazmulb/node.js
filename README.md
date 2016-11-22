@@ -20,7 +20,7 @@
 - Node is a server which can execute JavaScript. Sort of a server side browser.
 - Node.js is an open source, cross-platform runtime environment for developing server-side and networking applications.
   
-![Node Processing Model](https://raw.githubusercontent.com/nazmulbasher/node/master/node-processing-model.png)
+![Node Processing Model](https://raw.githubusercontent.com/nazmulb/node.js/master/node-processing-model.png)
   
 ## What are features of node.js?
 - **Asynchronous and Event Driven** - All APIs of Node.js library are asynchronous, that is, non-blocking.

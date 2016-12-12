@@ -139,3 +139,31 @@ Express is a minimal and flexible Node.js web application framework that provide
 - Defines a routing table which is used to perform different actions based on HTTP Method and URL.
 - Allows to dynamically render HTML Pages based on passing arguments to templates.
 
+## How to install the Express framework?
+The following way we can install the Express framework globally using NPM so that it can be used to create a web application using node terminal.
+```
+npm install express --save
+```
+
+## Hello world Example
+Following is a very basic Express app which starts a server and listens on port 3000 for connection. This app responds with Hello World! for requests to the homepage. For every other path, it will respond with a 404 Not Found.
+```
+var express = require('express');
+var app = express();
+
+app.get('/', function (req, res) {
+   res.send('Hello World');
+})
+
+var server = app.listen(8081, function () {
+   var host = server.address().address
+   var port = server.address().port
+
+   console.log("Example app listening at http://%s:%s", host, port)
+})
+```
+Save the above code in a file named server.js and run it with the following command.
+```
+node server.js
+```
+Open http://127.0.0.1:8081/ in any browser to see the result.

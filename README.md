@@ -128,3 +128,14 @@ var http = require("http");
   // Console will print the message
   console.log('Server running at http://127.0.0.1:8081/');
 ```
+
+# Express.js
+
+## What is Express.js?
+Express is a minimal and flexible Node.js web application framework that provides a robust set of features to develop web and mobile applications.
+
+## What are the core features of Express framework?
+- Allows to set up middlewares to respond to HTTP Requests.
+- Defines a routing table which is used to perform different actions based on HTTP Method and URL.
+- Allows to dynamically render HTML Pages based on passing arguments to templates.
+

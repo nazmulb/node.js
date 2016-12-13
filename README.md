@@ -68,7 +68,7 @@ Yes, just because Node is designed without threads, doesn't mean you cannot take
 Callback is an asynchronous equivalent for a function. A callback function is called at the completion of a given task. Node makes heavy use of callbacks. All the APIs of Node are written in such a way that they support callbacks.
 
 ## Blocking Code Example:
-```
+```js
 var fs = require("fs");
 
 var data = fs.readFileSync('input.txt');
@@ -77,7 +77,7 @@ console.log(data.toString());
 console.log("Program Ended");
 ```
 ## Non-Blocking Code Example:
-```
+```js
 var fs = require("fs");
 
 fs.readFile('input.txt', function (err, data) {
@@ -90,12 +90,12 @@ console.log("Program Ended");
 
 ## Creating node.js application:
 - **Step 1 - Import Required Module**
-```
+```js
 var http = require("http");
 ```  
 
 - **Step 2 - Create Server**
-```
+```js
   http.createServer(function (request, response) {
     // Send the HTTP header 
     // HTTP Status: 200 : OK
@@ -111,7 +111,7 @@ var http = require("http");
 ```
 
 - **Step 3 - Testing Request & Response**
-```
+```js
   var http = require("http");
 
   http.createServer(function (request, response) {
@@ -147,7 +147,8 @@ npm install express --save
 
 ## Hello world Example
 Following is a very basic Express app which starts a server and listens on port 3000 for connection. This app responds with Hello World! for requests to the homepage. For every other path, it will respond with a 404 Not Found.
-```
+
+```js
 var express = require('express');
 var app = express();
 
@@ -190,7 +191,7 @@ An Express application can use the following types of middleware:
 
 To load the middleware function, call app.use(), specifying the middleware function. For example, the following code loads the myLogger middleware function before the route to the root path (/).
 
-```
+```js
 var express = require('express')
 var app = express()
 
@@ -218,7 +219,7 @@ The middleware function myLogger simply prints a message, then passes on the req
 
 Next, we’ll create a middleware function called “requestTime” and add it as a property called requestTime to the request object.
 
-```
+```js
 var requestTime = function (req, res, next) {
   req.requestTime = Date.now()
   next()
@@ -226,7 +227,7 @@ var requestTime = function (req, res, next) {
 ```
 
 The app now uses the requestTime middleware function. Also, the callback function of the root path route uses the property that the middleware function adds to req (the request object).
-```
+```js
 var express = require('express')
 var app = express()
 
@@ -254,9 +255,130 @@ Because you have access to the request object, the response object, the next mid
 
 Define error-handling middleware functions in the same way as other middleware functions, except with four arguments instead of three, specifically with the signature (err, req, res, next)):
 
-```
+```js
 app.use(function (err, req, res, next) {
   console.error(err.stack)
   res.status(500).send('Something broke!')
 })
+```
+
+## What is callback hell?
+Asynchronous IO requires callbacks and running multiple sequential async operations requires nested callbacks and nested callbacks become hard to read. We can avoid this in several ways like using Promise, Async.js, Using Generators and co library and also using ES7 async/await.
+
+**Example of nested callbacks:**
+
+```js
+app.post('/signup', function(req, res, next){
+	duplicateUserNameCheck(req.body.username, function(err){
+		if(err) return next(err);
+		duplicateEmailCheck(req.body.email, function(err){
+			if(err) return next(err);
+			createUser(req.body, function(err, user){
+				if(err) return next(err);
+				createAccount(user, function(err, account){
+					if(err) return next(err);
+					sendWelcomeEmail(user, function(err){
+						if(err) return next(err);
+						loginUser(user, function(err){
+							if(err) return next(err);
+							res.redirect('/home');
+						});
+					});
+				});
+			});
+		})
+	})
+})
+```
+
+### Avoiding Callback
+
+#### Using Async.js (https://caolan.github.io/async/docs.html#.waterfall)
+
+```js
+var async = require('async');
+
+async.waterfall([
+	duplicateUserNameCheck,
+	duplicateEmailCheck,
+	createUser,
+	createAccount,
+	sendWelcomeEmail,
+	loginUser,
+], function(err, result){
+	res.redirect('/home');
+});
+```
+
+#### Using Promise
+
+```js
+app.post('/signup', function(req, res, next){
+	duplicateUserNameCheck(req.body.username)
+	.then(function(){
+		return duplicateEmailCheck(req.body.email);
+	})
+	.then(function(){
+		return createUser(req.body);
+	})
+	.then(createAccount)
+	.then(sendWelcomeEmail)
+	.then(loginUser)
+	.then(function(){
+		res.redirect('/home')
+	})
+	.catch(function(err){
+		next(err);
+	})
+});
+```
+
+#### Using Generators and `co` library
+
+```js
+var co = require('co');
+
+app.post('/signup', function(req, res, next){
+
+	co(function *(){
+		let isDuplicateUser = yield duplicateUserNameCheck(req.body.username);
+		let isDuplicateEmail =  yield duplicateEmailCheck(req.body.email);
+
+		let user = yield createUser(req.body);
+		let account = yield createAccount(user);
+
+		yield sendWelcomeEmail(user);
+
+		yield loginUser(user);
+
+		res.redirect('/home');
+	})
+	.catch(function(err){
+		next(err);
+	})
+});
+```
+
+#### Using ES7 `async/await`
+
+```js
+app.post('/signup', function(req, res, next){
+
+	try{
+		let isDuplicateUser = await duplicateUserNameCheck(req.body.username);
+		let isDuplicateEmail = await duplicateEmailCheck(req.body.email);
+
+		let user = await createUser(req.body);
+		let account = await createAccount(user);
+
+		await sendWelcomeEmail(user);
+
+		await loginUser(user);
+
+		res.redirect('/home');
+	}
+	catch(e){
+		next(err);
+	}
+});
 ```

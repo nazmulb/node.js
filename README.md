@@ -263,7 +263,7 @@ app.use(function (err, req, res, next) {
 ```
 
 ## What is callback hell?
-Asynchronous IO requires callbacks and running multiple sequential async operations requires nested callbacks and nested callbacks become hard to read. We can avoid this in several ways like using Promise, Async.js, Using Generators and co library and also using ES7 async/await.
+Asynchronous IO requires callbacks and running multiple sequential async operations requires nested callbacks and nested callbacks become hard to read. We can avoid this in several ways like using Promise, Async.js, Generators and co library and also using ES7 async/await.
 
 **Example of nested callbacks:**
 
@@ -382,3 +382,35 @@ app.post('/signup', function(req, res, next){
 	}
 });
 ```
+
+## What is the need of package.json?
+- It serves as documentation for what packages your project depends on.
+- It allows you to specify the versions of a package that your project can use using semantic versioning rules.
+- Makes your build reproducable which means that its way easier to share with other developers.
+
+## As a bare minimum, a package.json must have:
+
+- **"name"**
+- all lowercase
+- one word, no spaces
+- dashes and underscores allowed
+
+- **"version"**
+- in the form of x.x.x
+- follows semver spec
+
+## Creating a package.json
+
+To create a package.json run:
+```
+npm init
+```
+This will initate a command line questionnaire that will conclude with the creation of a package.json in the directory you initiated the command.
+
+**The --yes init flag**
+
+You can get a default package.json by running npm init with the --yes or -y flag:
+```
+npm init --yes
+```
+This will ask you only one question, author. Otherwise it will fill in default values.

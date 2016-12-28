@@ -514,6 +514,8 @@ Suppose a client needs a database design for his blog/website and see the differ
 
 In RDBMS schema, design for above requirements will have minimum three tables.
 
+![RDBMS](https://raw.githubusercontent.com/nazmulb/node.js/master/rdbms.png)
+
 While in MongoDB schema, design will have one collection post and the following structure
 
 ```mongodb

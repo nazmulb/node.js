@@ -431,7 +431,7 @@ A document is a set of key-value pairs. Documents have dynamic schema. Dynamic s
 
 ## Sample Document
 Following example shows the document structure of a blog site, which is simply a comma separated key value pair.
-```json
+```
 {
    _id: ObjectId(7df78ad8902c)
    title: 'MongoDB Overview',

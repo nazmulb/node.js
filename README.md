@@ -464,3 +464,42 @@ Following example shows the document structure of a blog site, which is simply a
 }
 ```
 _id is a 12 bytes hexadecimal number which assures the uniqueness of every document. You can provide _id while inserting the document. If you don’t provide then MongoDB provides a unique id for every document. These 12 bytes first 4 bytes for the current timestamp, next 3 bytes for machine id, next 2 bytes for process id of MongoDB server and remaining 3 bytes are simple incremental VALUE.
+
+## What are the advantages of MongoDB over RDBMS?
+- Schema less − MongoDB is a document database in which one collection holds different documents. Number of fields, content and size of the document can differ from one document to another.
+- No complex joins.
+- Deep query-ability. MongoDB supports dynamic queries on documents using a document-based query language that's nearly as powerful as SQL.
+- Tuning.
+- Ease of scale-out − MongoDB is easy to scale.
+- Conversion/mapping of application objects to database objects not needed.
+- Uses internal memory for storing the (windowed) working set, enabling faster access of data.
+
+## Why Use MongoDB?
+- Document Oriented Storage − Data is stored in the form of JSON style documents
+- Index on any attribute
+- Replication and high availability
+- Auto-sharding
+- Rich queries
+- Fast in-place updates
+- Professional support by MongoDB
+
+## Where to Use MongoDB?
+- Big Data
+- Content Management and Delivery
+- Mobile and Social Infrastructure
+- User Data Management
+- Data Hub
+
+## What are the disadvantages of MongoDB?
+- No transaction
+- No join
+- MongoDB is very memory hungry. Your server will need a lot of RAM
+
+## Some considerations while designing Schema in MongoDB
+- Design your schema according to user requirements.
+- Combine objects into one document if you will use them together. Otherwise separate them (but make sure there should not be need of joins).
+- Duplicate the data (but limited) because disk space is cheap as compare to compute time.
+- Do joins while write, not on read.
+- Optimize your schema for most frequent use cases.
+- Do complex aggregation in the schema.
+

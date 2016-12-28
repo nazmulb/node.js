@@ -562,3 +562,44 @@ So while showing the data, in RDBMS you need to join three tables and in MongoDB
 - **Binary data** − This datatype is used to store binary data.
 - **Code** − This datatype is used to store JavaScript code into the document.
 - **Regular expression** − This datatype is used to store regular expression.
+
+## Some Commands
+To create/use a database
+```mongobd
+>use mydb
+```
+
+To show all databases
+```mongobd
+>show dbs
+```
+
+To drop database
+```mongobd
+>db.dropDatabase()
+```
+
+To create a collection named movie
+```mongobd
+>db.createCollection("movie")
+```
+
+To drop a collection named movie
+```mongobd
+>db.movie.drop()
+```
+
+To show all collections
+```mongobd
+>show collections
+```
+
+To insert a document in movie collection
+```mongobd
+>db.movie.insert({"name":"IP Man3"})
+```
+To query data from MongoDB collection in a formatted way
+```mongobd
+>db.movie.find().pretty()
+{ "_id" : ObjectId("58638408f133b3ec483c719f"), "name" : "IP Man3" }
+```

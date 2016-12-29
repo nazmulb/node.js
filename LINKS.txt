@@ -1,5 +1,6 @@
 http://www.tutorialspoint.com/nodejs
 https://nodejs.org/dist/latest-v4.x/docs/api/http.html
+https://www.tutorialspoint.com/videos/nodejs_online_training/index.htm
 https://expressjs.com
 https://expressjs.com/en/starter/generator.html
 https://github.com/expressjs/body-parser

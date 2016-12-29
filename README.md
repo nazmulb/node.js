@@ -596,17 +596,28 @@ To show all collections
 
 To insert a document in movie collection
 ```mongobd
->db.movie.insert({"name":"IP Man3", "Likes":100, "tag":["action"]})
+>db.movie.insert({"name":"IP Man3", "likes":100, "tag":["action"]})
 ```
+
 To query data from MongoDB collection in a formatted way
 ```mongobd
 >db.movie.find().pretty()
 {
     "_id" : ObjectId("58638408f133b3ec483c719f"),
     "name" : "IP Man3",
-    "Likes": 100,
+    "likes": 100,
     "tag": [
             "action"
     ]
 }
+```
+
+To update a document in movie collection
+```mongobd
+>db.movie.update({'name':'IP Man3'}, {$set:{'likes':101}})
+```
+
+To remove a document in movie collection
+```mongobd
+>db.movie.remove({'name':'IP Man3'})
 ```

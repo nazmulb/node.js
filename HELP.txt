@@ -1,25 +1,16 @@
 Mongodb Help Tips:
+After Mongodb installation, please add C:\Program Files\MongoDB\Server\3.2\bin as PATH under Envirnment Veriables in Windows OS.
 
 To run mongo server:
-cd C:\Program Files\MongoDB\Server\3.2\bin
-mongod.exe --dbpath D:\mongodb\data
+mongod --dbpath D:\mongodb\data
 
 To run mongo sell client: (open another cmd terminal to run it)
-cd C:\Program Files\MongoDB\Server\3.2\bin
-
-mongo.exe
+mongo
 
 ---------------------------------------
 npm tips:
 
-uninstall modules from package.json  
-
+To uninstall modules from package.json
 npm prune
-
-
-
-
-
-
-
-
+or
+npm uninstall express --save

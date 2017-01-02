@@ -1,6 +1,3 @@
-Mongodb Help Tips:
-After Mongodb installation, please add C:\Program Files\MongoDB\Server\3.2\bin as PATH under Envirnment Veriables in Windows OS.
-
 To run mongo server:
 mongod --dbpath D:\mongodb\data
 

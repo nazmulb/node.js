@@ -5,6 +5,8 @@ https://expressjs.com
 https://expressjs.com/en/starter/generator.html
 https://github.com/expressjs/body-parser
 https://pugjs.org/language/attributes.html
+https://github.com/jaredhanson/passport
+https://github.com/jaredhanson/passport-local
 https://github.com/passport/express-4.x-local-example
 https://www.npmjs.com/package/mysql
 https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows/

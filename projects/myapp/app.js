@@ -62,7 +62,7 @@ passport.use(new localStrategy({
 		
 		return done(null, user[0]);
 	}, (e) => {
-		return cb(e);
+		return done(e);
 	});
   }
 ));
@@ -74,10 +74,10 @@ passport.serializeUser( (user, done) => {
 passport.deserializeUser( (id, done) => {
 	id = parseInt(id);
 	Users.getUserById(id).then( (user) => {
-		if (Object.keys(user).length == 0) { return cb("error"); }
+		if (Object.keys(user).length == 0) { return done("error"); }
 		done(null, user[0]);
 	}, (e) => {
-		return cb(e);
+		return done(e);
 	});
     
 });

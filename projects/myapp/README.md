@@ -7,6 +7,16 @@ You need to install mongodb & mysql and run both database server as well.
 
 Create `myapp` database with `users` collection/table and add SID data for _id, username, password, profession
 
+###### for mongodb after creating the users collection, please add the SID data:
+```mongodb
+{
+    "_id" : NumberLong(1479104274018),
+    "username" : "nazmul",
+    "password" : "123",
+    "profession" : "Software Engineer"
+}
+```
+
 ###### for mysql:
 
 ```

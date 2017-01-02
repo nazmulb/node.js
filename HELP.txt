@@ -6,11 +6,3 @@ mongod --dbpath D:\mongodb\data
 
 To run mongo sell client: (open another cmd terminal to run it)
 mongo
-
----------------------------------------
-npm tips:
-
-To uninstall modules from package.json
-npm prune
-or
-npm uninstall express --save

@@ -11,7 +11,7 @@ var debug = require('debug')('myapp');
  * Get port from environment and store in Express.
  */
 
-app.set('port', process.env.PORT || '8081');
+app.set('port', process.env.PORT || '8082');
 
 /**
  * Set server listener.

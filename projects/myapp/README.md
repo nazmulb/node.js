@@ -1,5 +1,5 @@
-# Wed Application using Express
-This is a project by using nodeJs, ExpressJs, Mongodb, MySql, pug, etc
+# Web Application using Express
+This is a project by using nodeJs, ExpressJs, ES6, Mongodb, MySql, pug, etc
 
 ## Setup
 You need `node v6.9.1` or more latest version to be installed for this project.

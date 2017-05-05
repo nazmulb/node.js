@@ -1,9 +1,9 @@
 1. install node v6.9.1 or more
-2. install mongodb
+2. install mongodb (for mac first install Homebrew then brew install mongodb)
 3. install robomongo
 4. after Mongodb installation, please add C:\Program Files\MongoDB\Server\3.2\bin as PATH under Envirnment Veriables in Windows OS.
 5. pls create folder like D:\mongodb\data, open a new console and run mongo server:
-   mongod --dbpath D:\mongodb\data
+   mongod --dbpath D:\mongodb\datas
 6. run robomongo, to check it can run or not?
 7. clone or download https://github.com/nazmulb/node.js folder
 8. open a new console and go to c:\node.js\learning and run command: npm install

@@ -5,3 +5,4 @@ learning/node_modules
 learning/http/test.mp4
 tmp
 .idea
+.DS_Store

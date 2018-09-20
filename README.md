@@ -111,6 +111,7 @@ var http = require("http");
 ```
 
 - **Step 3 - Testing Request & Response**
+
 Let's put step 1 and 2 together in a file called `main.js` and start our HTTP server as shown below:
 
 ```js

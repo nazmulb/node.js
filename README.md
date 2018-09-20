@@ -62,7 +62,7 @@ Yes, just because Node is designed without threads, doesn't mean you cannot take
 ## What are the three important components of node.js?
 - **Import required modules** − We use the require directive to load Node.js modules.
 - **Create server** − A server which will listen to client's requests similar to Apache HTTP Server.
-- **Read request and return response** − The server created in an earlier step will read the HTTP request made by the client which can be a browser or a console and return the response.
+- **Read request and return response** − Server can read the HTTP request made by the client which can be a browser or a console and return the response.
 
 ## What is Callback?
 Callback is an asynchronous equivalent for a function. A callback function is called at the completion of a given task. Node makes heavy use of callbacks. All the APIs of Node are written in such a way that they support callbacks.
@@ -111,6 +111,8 @@ var http = require("http");
 ```
 
 - **Step 3 - Testing Request & Response**
+Let's put step 1 and 2 together in a file called `main.js` and start our HTTP server as shown below:
+
 ```js
   var http = require("http");
 
@@ -127,6 +129,18 @@ var http = require("http");
 
   // Console will print the message
   console.log('Server running at http://127.0.0.1:8081/');
+```
+
+Now execute the `main.js` to start the server as follows:
+
+```js
+node main.js
+```
+
+Verify the Output. Server has started.
+
+```
+Server running at http://127.0.0.1:8081/
 ```
 
 # Express.js

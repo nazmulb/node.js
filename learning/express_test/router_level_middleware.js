@@ -34,6 +34,14 @@ router.get('/user/:id', function (req, res, next) {
   res.send('special')
 })
 
+router.get('/contact', function (req, res) {
+  res.send('contact us')
+});
+
 app.use('/', router);
+
+app.get('/about', function (req, res) {
+  res.send('about page')
+});
 
 app.listen(8081);

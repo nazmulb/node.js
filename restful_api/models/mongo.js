@@ -17,7 +17,7 @@ var insertDocument = function(db, callback) {
 };
 
 var findWos = function(db, callback) {
-   var cursor = db.collection('workorder').find( { "status": 2 } );
+   var cursor = db.collection('workorder').find( { "status": 4 } );
    cursor.each(function(err, doc) {
       assert.equal(err, null);
       if (doc != null) {

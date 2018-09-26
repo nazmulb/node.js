@@ -1,5 +1,5 @@
 To run mongo server:
-mongod --dbpath D:\mongodb\data
+mongod --dbpath /Volumes/MyComputer/projects/mongodb/data
 
 To run mongo sell client: (open another cmd terminal to run it)
 mongo

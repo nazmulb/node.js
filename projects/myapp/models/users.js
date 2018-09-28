@@ -16,7 +16,10 @@ class Users
 	static getUserById(id){
 		return new Promise( (resolve, reject) => {
 			models.find(tableName, {'_id' : id}).then( (user) => {
-				resolve(user);
+				if(Object.keys(user).length > 0)
+					resolve(user);
+				else
+					reject(new Error("User not found!"));
 			}, (e) => {
 				reject("error");
 			});

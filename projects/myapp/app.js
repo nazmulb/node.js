@@ -42,8 +42,8 @@ app.use(methodOverride( (req, res) => {
 app.use(cookieParser());
 app.use(session({
 	secret: 'my secret string',
-	resave: false,
-	saveUninitialized: false
+	resave: true,
+	saveUninitialized: true
 }));
 
 app.use(passport.initialize());

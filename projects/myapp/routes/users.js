@@ -10,12 +10,12 @@ router.get('/', (req, res) => {
 	});	
 });
 
-router.get('/view/:id', (req, res) => {
+router.get('/view/:id', (req, res, next) => {
 	let id = parseInt(req.params.id);
 	Users.getUserById(id).then( (user) => {
 		res.render('view', { title: 'View User', user: user });
 	}, (e) => {
-		throw new Error("Error: " + e);
+		next(e);
 	});	
 });
 
@@ -23,12 +23,12 @@ router.get('/add', (req, res) => {
 	res.render('add', { title: 'Add User', messages: req.flash('userAddMsg'), _id: '', user: {} });
 });
 
-router.get('/edit/:id', (req, res) => {
+router.get('/edit/:id', (req, res, next) => {
 	let id = parseInt(req.params.id);
 	Users.getUserById(id).then( (user) => {
 		res.render('add', { title: 'Edit User', messages: req.flash('userAddMsg'), _id: id, user: user[0] });
 	}, (e) => {
-		throw new Error("Error: " + e);
+		next(e);
 	});
 });
 

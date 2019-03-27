@@ -47,4 +47,4 @@ npm start
 ```
 
 ###### Open your browser and use the below url:
-`http://127.0.0.1:8082`
+`http://localhost:8082`

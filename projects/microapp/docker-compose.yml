@@ -1,0 +1,40 @@
+version: "3"
+volumes:
+  mysql:
+networks:
+  microapp:
+    driver:
+      bridge
+services:
+  api:
+    container_name: api
+    build:
+      context: ./api
+    depends_on:
+      - db
+    volumes:
+      - ./api:/api
+      - /api/node_modules
+    ports:
+      - "3000:3000"
+    networks:
+      - microapp
+    environment:
+      NODE_ENV: development
+      PORT: 3000
+      JWT_SECRET_KEY: abc123
+      DEV_DATABASE_URL: "mysql://root:123@db:3306/microapp_dev"
+      TEST_DATABASE_URL: "mysql://root:123@db:3306/microapp_test"
+  db:
+    container_name: db
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: 123
+    volumes:
+      - ./data:/docker-entrypoint-initdb.d
+      - ./mysql:/var/lib/mysql
+    command: --default-authentication-plugin=mysql_native_password
+    ports:
+      - "3306:3306"
+    networks:
+      - microapp

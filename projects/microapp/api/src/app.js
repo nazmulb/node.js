@@ -5,8 +5,7 @@ const bodyParser = require('body-parser');
 const logger = require('morgan');
 
 const { checkAuth } = require('./middlewares');
-const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
+const { indexRouter, usersRouter } = require("./routes");
 
 const app = express();
 
@@ -14,8 +13,8 @@ app.use(cors());
 app.use(logger('dev'));
 app.use(bodyParser.json());
 
-app.use('/', indexRouter);
-app.use('/users', checkAuth, usersRouter);
+app.use('/api', indexRouter);
+app.use('/api/users', checkAuth, usersRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

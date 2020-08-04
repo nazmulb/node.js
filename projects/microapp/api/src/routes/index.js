@@ -6,4 +6,11 @@ router.get('/', (req, res) => {
   return res.json({ message: 'Welcome' });
 });
 
+/* GET health check. */
+router.get('/healthz', (req, res) => {
+  res.json({
+    uptime: process.uptime(),
+  });
+});
+
 module.exports = router;

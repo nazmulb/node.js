@@ -1,9 +1,19 @@
-var express = require('express');
-var router = express.Router();
+const express = require("express");
 
-/* GET users listing. */
-router.get('/', (req, res) => {
-  return res.json({ message: 'User Page' });
-});
+const router = new express.Router();
+const { UserController } = require("../controllers");
+
+const uc = new UserController();
+
+router
+	.route("/")
+	.get(uc.list)
+	.post(uc.create);
+
+router
+	.route("/:id")
+	.get(uc.view)
+	.put(uc.update)
+	.delete(uc.delete);
 
 module.exports = router;

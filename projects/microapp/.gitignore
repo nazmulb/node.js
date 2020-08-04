@@ -1,5 +1,9 @@
 .idea
 .vscode
+tmp
+mysql
+reports
+coverage
 node_modules
 **/npm-debug.log
 

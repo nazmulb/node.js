@@ -1,6 +1,7 @@
 .idea
 .vscode
 tmp
+data
 mysql
 reports
 coverage

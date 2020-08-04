@@ -23,6 +23,7 @@ services:
       NODE_ENV: development
       PORT: 3000
       JWT_SECRET_KEY: abc123
+      SALT_ROUNDS: 10
       DEV_DATABASE_URL: "mysql://root:123@db:3306/microapp_dev"
       TEST_DATABASE_URL: "mysql://root:123@db:3306/microapp_test"
   db:

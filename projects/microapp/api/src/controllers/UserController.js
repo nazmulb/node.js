@@ -2,6 +2,7 @@ const bcrypt = require("bcrypt");
 
 const { Controller } = require("../libraries");
 const { UserService } = require("../services");
+const service = new UserService();
 
 const config = require(`${__dirname}/../config`);
 
@@ -9,13 +10,6 @@ const config = require(`${__dirname}/../config`);
  * User Controller Related Methods
  */
 class UserController extends Controller {
-  /**
-   * Constructor
-   */
-  constructor() {
-    this.service = new UserService();
-  }
-
   /**
    * Users listing page
    * @param {object} req - request object

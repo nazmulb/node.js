@@ -19,7 +19,7 @@ docker-compose up
 Please run the following command:
 
 ```sh
-docker exec api bash -c "npm run db && npm run migrate && npm run seed"
+docker exec api bash -c "npm run db && npm run migration:migrate && npm run migration:seed"
 ```
 
 ### Open your browser and use the below URL:

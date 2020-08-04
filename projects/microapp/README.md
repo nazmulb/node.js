@@ -16,7 +16,7 @@ npm i
 docker-compose up
 ```
 
-Please run your MySql server and run the following command:
+Please run the following command:
 
 ```sh
 docker exec api bash -c "npm run db && npm run migrate && npm run seed"

@@ -5,4 +5,5 @@ learning/node_modules
 learning/http/test.mp4
 tmp
 .idea
+.vscode
 .DS_Store

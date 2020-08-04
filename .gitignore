@@ -4,6 +4,9 @@ restful_api/node_modules
 learning/node_modules
 learning/http/test.mp4
 tmp
+reports
+coverage
+mysql
 .idea
 .vscode
 .DS_Store

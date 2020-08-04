@@ -1,8 +1,8 @@
-const jwt = require("jsonwebtoken");
-const bcrypt = require("bcrypt");
+const jwt = require('jsonwebtoken');
+const bcrypt = require('bcrypt');
 
 const config = require(`${__dirname}/../config`);
-const { UserService } = require("../services");
+const { UserService } = require('../services');
 
 const auth = async (req, res, next) => {
 	try {
@@ -12,11 +12,11 @@ const auth = async (req, res, next) => {
 		const isValid = bcrypt.compareSync(req.body.password, user.password);
 
 		if (!isValid) {
-			return res.status(401).json({ message: "Unauthorized: Invalid password." });
+			return res.status(401).json({ message: 'Unauthorized: Invalid password.' });
 		}
 
 		const newToken = jwt.sign({ email: user.email }, config.JWT_SECRET_KEY);
-		return res.json(newToken);
+		return res.json({token: newToken});
 	} catch (e) {
 		return next(e.message);
 	}

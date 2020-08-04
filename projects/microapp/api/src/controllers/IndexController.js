@@ -1,4 +1,4 @@
-const { Controller } = require("../libraries");
+const { Controller } = require('../libraries');
 
 /**
  * Index Controller Related Methods

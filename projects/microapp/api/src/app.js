@@ -5,16 +5,17 @@ const bodyParser = require('body-parser');
 const logger = require('morgan');
 
 const { auth, checkAuth } = require('./middlewares');
-const { indexRouter, usersRouter } = require("./routes");
+const { indexRouter, usersRouter } = require('./routes');
 
 const app = express();
 
 app.use(cors());
 app.use(logger('dev'));
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use('/api', indexRouter);
-app.use("/api/auth", auth);
+app.use('/api/auth', auth);
 app.use('/api/users', checkAuth, usersRouter);
 
 // catch 404 and forward to error handler

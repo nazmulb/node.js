@@ -1,4 +1,4 @@
-const { Model } = require("sequelize");
+const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
     /**
@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         validate: {
           notNull: {
-            msg: "Please enter your first name",
+            msg: 'Please enter your first name',
           },
         },
       },
@@ -28,7 +28,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         validate: {
           isEmail: {
-            msg: "Please enter a valid email address",
+            msg: 'Please enter a valid email address',
           },
         },
       },
@@ -37,14 +37,14 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         validate: {
           notNull: {
-            msg: "Please enter your password",
+            msg: 'Please enter your password',
           },
         },
       },
     },
     {
       sequelize,
-      modelName: "User",
+      modelName: 'User',
     }
   );
   return User;

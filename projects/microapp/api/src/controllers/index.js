@@ -1,4 +1,4 @@
 module.exports = {
-	IndexController: require("./IndexController"),
-	UserController: require("./UserController"),
+	IndexController: require('./IndexController'),
+	UserController: require('./UserController'),
 };

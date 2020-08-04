@@ -7,7 +7,7 @@ class Controller {
    */
   constructor() {
     if (new.target === Controller) {
-      throw new Error("Controller can't be instantiated directly.");
+      throw new Error('Controller can\'t be instantiated directly.');
     }
   }
 
@@ -20,7 +20,7 @@ class Controller {
    *      ic.index();
    */
   index(req, res) {
-    return res.json({ message: "Welcome!" });
+    return res.json({ message: 'Welcome!' });
   }
 }
 

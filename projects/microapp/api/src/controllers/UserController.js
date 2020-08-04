@@ -1,7 +1,7 @@
-const bcrypt = require("bcrypt");
+const bcrypt = require('bcrypt');
 
-const { Controller } = require("../libraries");
-const { UserService } = require("../services");
+const { Controller } = require('../libraries');
+const { UserService } = require('../services');
 const service = new UserService();
 
 const config = require(`${__dirname}/../config`);
@@ -39,7 +39,7 @@ class UserController extends Controller {
       return res.json(user);
     }
 
-    return res.status(404).json({ message: "User not found" });
+    return res.status(404).json({ message: 'User not found' });
   }
 
   /**
@@ -60,7 +60,7 @@ class UserController extends Controller {
     }
 
     req.body.password =
-      req.body.password !== undefined && req.body.password !== ""
+      req.body.password !== undefined && req.body.password !== ''
         ? await bcrypt.hash(req.body.password, parseInt(config.SALT_ROUNDS))
         : null;
     const user = await service.createUser(req.body);
@@ -83,7 +83,7 @@ class UserController extends Controller {
       return res.json(user);
     }
 
-    return res.status(404).json({ message: "User not found" });
+    return res.status(404).json({ message: 'User not found' });
   }
 
   /**
@@ -98,10 +98,10 @@ class UserController extends Controller {
     const deleted = await service.deleteUser(req.params.id);
 
     if (deleted) {
-      return res.json({ message: "User deleted" });
+      return res.json({ message: 'User deleted' });
     }
 
-    return res.status(404).json({ message: "User not found" });
+    return res.status(404).json({ message: 'User not found' });
   }
 }
 

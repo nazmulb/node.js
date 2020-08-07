@@ -54,6 +54,10 @@ zip.on('entry', function (entry) {
         return;
     }
 
+    if (entry.name.startsWith('META-INF')) {
+        return;
+    }
+
     console.log('[FILE]', entry.name);
     
     zip.stream(entry.name, function (err, stream) {
